@@ -41,8 +41,23 @@ Cinema.prototype.filmsAreLong = function(films, duration) {
  
 // ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
+Cinema.prototype.getFilmDuration = function(films) {
+  const result = films.map((film) => {
+    return film.length
+  }); 
+  return result;
+}; 
 
+Cinema.prototype.totalRunningTime = function(films) {
+  const durations = this.getFilmDuration(films)
+  const result = durations.reduce(
+    (runningTotal, length) => {
+      return runningTotal + length;
+    }, 0);
+    return result
+};
 
+// You can pass a prototype function into another prototype function with the `this` keyword.
 
 
 
