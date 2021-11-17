@@ -16,4 +16,36 @@ Cinema.prototype.findFilmByTitle = function(films, title) {
   return result;
 }; 
 
+Cinema.prototype.filterByGenre = function(films, genre) {
+  const result = films.filter(
+    film => film.genre === genre);
+    return result;
+}; 
+
+Cinema.prototype.filmsOfYear = function(films, year) {
+  const result = films.find(
+    film => film.year === year);
+    if (result) {
+      return true;
+    } else {
+      return false;
+    }
+}; 
+
+
+Cinema.prototype.filmsAreLong = function(films, duration) {
+  const result = films.every(
+    film => film.duration > duration);
+    return result
+};
+ 
+// ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+
+
+
+
+
+
+
 module.exports = Cinema;
